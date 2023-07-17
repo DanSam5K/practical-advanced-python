@@ -6,7 +6,7 @@ def measure_access_time(lst, index):
 
 
 
-list_sizes = [1000, 10000, 100000]
+list_sizes = [1000000, 100000, 10000, 1000, 100]
 for size in list_sizes:
     lst = list(range(size))
     t1 = Timer(f"measure_access_time({lst}, 0)", "from __main__ import measure_access_time")
