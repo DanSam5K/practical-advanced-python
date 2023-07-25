@@ -63,7 +63,7 @@ class UnorderedList():
 
         if current is None:
             raise ValueError(f"{item} is not on the list")
-        if previous is None:
+        elif previous is None:
             self.head = current.next
         else:
             previous.next = current.next
@@ -77,17 +77,76 @@ class UnorderedList():
             current = current.next
         current = temp
 
-
-
 # append(item) adds a new item to the end of the list making it the last item in the collection. It needs the item and returns nothing. Assume the item is not already in the list.
-
 # index(item) returns the position of item in the list. It needs the item and returns the index. Assume the item is in the list.
-
 # insert(pos, item) adds a new item to the list at position pos. It needs the item and returns nothing. Assume the item is not already in the list and there are enough existing items to have position pos.
-
 # pop() removes and returns the last item in the list. It needs nothing and returns an item. Assume the list has at least one item.
-
 # pop(pos) removes and returns the item at position pos. It needs the position and returns the item. Assume the item is in the list.
+
+
+class OrderedList():
+    def __init__(self):
+        self.head = None
+
+    def is_empty(self):
+        return self.head == None
+    
+    def size(self):
+        current = self.head
+        count = 0
+        while current is not None:
+            count += 1
+            current = current.next
+        return count
+    
+    def remove(self, item):
+        current = self.head
+        previous = None
+        while current is not None:
+            if current.data == item:
+                break
+            previous = current
+            current = current.next
+
+        if current is None:
+            raise ValueError(f"{item} is not on the list")
+        elif previous is None:
+            self.head = current.next
+        else:
+            previous.next = current.next
+
+    def search(self, item):
+        current = self.head
+        while current is not None:
+            if current.data == item:
+                return True
+            if current.data > item:
+                return False
+            current = current.next
+
+        return False
+    
+    def add(self, item):
+        current = self.head
+        previous = None
+        temp = Node(item)
+
+        while current is not None and current.data < item:
+            previous = current
+            current = current.next
+
+        if previous is None:
+            temp.next = self.head
+            self.head = temp
+        else:
+            temp.next = current
+            previous.next = temp
+
+                
+
+
+
+
 
     
 
