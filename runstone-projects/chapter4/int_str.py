@@ -1,4 +1,5 @@
 import re
+from collections import deque
 
 def to_str(n, base):
     convert_string = "0123456789ABCDEF"
@@ -28,3 +29,19 @@ print(clean_str("Dani. el"), "Daniel")
 
 print(is_pal("Wassamassaw – a town in South Dakota"))
 print(is_pal("kayak"))
+
+def to_str_stack(n, base):
+    r_stack = deque()
+    convert_str = "0123456789ABCDEF"
+    while n > 0:
+        if n < base:
+            r_stack.append(convert_str[n])
+        else:
+            r_stack.append(convert_str[n % base])
+        n = n // base
+    res = ""
+    while len(r_stack) != 0:
+        res = res + str(r_stack.pop())
+    return res
+
+print(to_str_stack(1453, 16))
