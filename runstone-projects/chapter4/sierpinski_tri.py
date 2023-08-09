@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import turtle
 
 def draw_triangle(points, color, my_turtle):
