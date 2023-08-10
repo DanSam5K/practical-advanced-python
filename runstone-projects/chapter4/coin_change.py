@@ -28,4 +28,12 @@ def make_change_2(coin_value_list, change, known_results):
 
 print(make_change_2([1, 5, 10, 25], 63, [0] * 64))
 
-
+# Dynamic concepts
+def make_change_3(coin_value_list, change, min_coins):
+    for cents in range(change + 1):
+        coin_count = cents
+        for j in [c for c in coin_value_list if c <= cents]:
+            if min_coins[cents - j] + 1 < coin_counts:
+                coin_count = min_coins[cents - j] + 1
+            min_coins[cents] = coin_count
+    return min_coins[change]
