@@ -62,3 +62,23 @@ class HashTable:
 
 
 
+# def hash_str(a_str, table_size):
+#     return sum([(ord(c)*(i+1)) for i, c in enumerate(a_str)]) % table_size
+
+h = HashTable(11)
+h[54] = "cat"
+h[26] = "dog"
+h[93] = "lion"
+h[17] = "tiger"
+h[77] = "bird"
+h[31] = "cow"
+h[44] = "goat"
+h[55] = "pig"
+h[20] = "chicken"
+print(h.slots)
+print(h.data)
+print(h[20])
+print(h[17])
+h[20] = "duck"
+print(h[20])
+print(h[99])
