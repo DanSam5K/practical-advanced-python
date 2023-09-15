@@ -48,3 +48,17 @@ class HashTable:
 
         return data
 
+    def hash_function(self, key, size):
+        return key % size
+
+    def rehash(self, old_hash, size):
+        return (old_hash + 1) % size
+
+    def __getitem__(self, key):
+        return self.get(key)
+
+    def __setitem__(self, key, data):
+        self.put(key, data)
+
+
+
