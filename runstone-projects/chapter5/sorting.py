@@ -34,12 +34,24 @@ class Sorting:
                 a_list[i], a_list[min_index] = a_list[min_index], a_list[i]
         return a_list
 
+    def insertion_sort(self, a_list):
+        for i in range(1, len(a_list)):
+            current_value = a_list[i]
+            position = i
+            while position > 0 and a_list[position-1] > current_value:
+                a_list[position] = a_list[position-1]
+                position -= 1
+            a_list[position] = current_value
+        return a_list
+
+
 
 a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 sort_data = Sorting()
 print(sort_data.bubble_sort(a_list))
 print(sort_data.bubble_sort_short(a_list))
 print(sort_data.selection_sort(a_list))
+print(sort_data.insertion_sort(a_list))
 # temp = a_list[0]
 # print(temp, a_list[0])
 # a_list[0] = a_list[1]
