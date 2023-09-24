@@ -44,6 +44,9 @@ class Sorting:
             a_list[position] = current_value
         return a_list
 
+    def shell_sort(self, a_list):
+        pass
+
 
 
 a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
