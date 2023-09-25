@@ -44,8 +44,18 @@ class Sorting:
             a_list[position] = current_value
         return a_list
 
-    def shell_sort(self, a_list):
-        pass
+
+
+    def gab_insertion_sort(self, a_list, start, gap):
+        for i in range(start+gap, len(a_list), gap):
+            current_value = a_list[i]
+            position = i
+            while position >= gap and a_list[position-gap] > current_value:
+                a_list[position] = a_list[position-gap]
+                position -= gap
+            a_list[position] = current_value
+        return a_list
+
 
 
 
