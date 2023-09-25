@@ -44,7 +44,14 @@ class Sorting:
             a_list[position] = current_value
         return a_list
 
-
+    def shell_sort(self, a_list):
+        sublist_count = len(a_list) // 2
+        while sublist_count > 0:
+            for start_position in range(sublist_count):
+                self.gab_insertion_sort(a_list, start_position, sublist_count)
+            print("After increments of size", sublist_count, "The list is", a_list)
+            sublist_count = sublist_count // 2
+        return a_list
 
     def gab_insertion_sort(self, a_list, start, gap):
         for i in range(start+gap, len(a_list), gap):
@@ -65,6 +72,7 @@ print(sort_data.bubble_sort(a_list))
 print(sort_data.bubble_sort_short(a_list))
 print(sort_data.selection_sort(a_list))
 print(sort_data.insertion_sort(a_list))
+print(sort_data.shell_sort(a_list))
 # temp = a_list[0]
 # print(temp, a_list[0])
 # a_list[0] = a_list[1]
