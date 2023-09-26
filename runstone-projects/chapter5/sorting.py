@@ -63,16 +63,47 @@ class Sorting:
             a_list[position] = current_value
         return a_list
 
+    def merge_sort(self, a_list):
+        print("Splitting ", a_list)
+        if len(a_list) > 1:
+            mid = len(a_list) // 2
+            left_half = a_list[:mid]
+            right_half = a_list[mid:]
+            self.merge_sort(left_half)
+            self.merge_sort(right_half)
+            i = 0
+            j = 0
+            k = 0
+            while i < len(left_half) and j < len(right_half):
+                if left_half[i] < right_half[j]:
+                    a_list[k] = left_half[i]
+                    i += 1
+                else:
+                    a_list[k] = right_half[j]
+                    j += 1
+                k += 1
+            while i < len(left_half):
+                a_list[k] = left_half[i]
+                i += 1
+                k += 1
+            while j < len(right_half):
+                a_list[k] = right_half[j]
+                j += 1
+                k += 1
+        print("Merging ", a_list)
+        return a_list
+
 
 
 
 a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 sort_data = Sorting()
-print(sort_data.bubble_sort(a_list))
-print(sort_data.bubble_sort_short(a_list))
-print(sort_data.selection_sort(a_list))
-print(sort_data.insertion_sort(a_list))
-print(sort_data.shell_sort(a_list))
+# print(sort_data.bubble_sort(a_list))
+# print(sort_data.bubble_sort_short(a_list))
+# print(sort_data.selection_sort(a_list))
+# print(sort_data.insertion_sort(a_list))
+# print(sort_data.shell_sort(a_list))
+print(sort_data.merge_sort(a_list))
 # temp = a_list[0]
 # print(temp, a_list[0])
 # a_list[0] = a_list[1]
