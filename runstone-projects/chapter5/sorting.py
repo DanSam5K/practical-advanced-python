@@ -12,7 +12,6 @@ class Sorting:
                     # a_list[j], a_list[j+1] = a_list[j+1], a_list[j]  # This is the same as the above 3 lines
         return a_list
 
-
     def bubble_sort_short(self, a_list):
         for i in range(len(a_list)-1, 0, -1):
             exchanges = False
@@ -93,6 +92,30 @@ class Sorting:
         print("Merging ", a_list)
         return a_list
 
+    def quick_sort(self, a_list):
+
+
+    def quick_sort_helper(self, a_list, first, last):
+
+    def partition(self, a_list, first, last):
+        pivot_value = a_list[first]
+        left_mark = first + 1
+        right_mark = last
+        done = False
+        while not done:
+            while left_mark <= right_mark and a_list[left_mark] <= pivot_value:
+                left_mark += 1
+            while right_mark >= left_mark and a_list[right_mark] >= pivot_value:
+                right_mark -= 1
+            if right_mark < left_mark:
+                done = True
+            else:
+                a_list[left_mark], a_list[right_mark] = a_list[right_mark], a_list[left_mark]
+        a_list[first], a_list[right_mark] = a_list[right_mark], a_list[first]
+        return right_mark
+
+
+
 
 
 
@@ -103,7 +126,8 @@ sort_data = Sorting()
 # print(sort_data.selection_sort(a_list))
 # print(sort_data.insertion_sort(a_list))
 # print(sort_data.shell_sort(a_list))
-print(sort_data.merge_sort(a_list))
+# print(sort_data.merge_sort(a_list))
+print(sort_data.quick_sort(a_list))
 # temp = a_list[0]
 # print(temp, a_list[0])
 # a_list[0] = a_list[1]
