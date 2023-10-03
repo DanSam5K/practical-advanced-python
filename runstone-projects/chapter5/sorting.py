@@ -96,6 +96,10 @@ class Sorting:
 
 
     def quick_sort_helper(self, a_list, first, last):
+        if first < last:
+            split_point = self.partition(a_list, first, last)
+            self.quick_sort_helper(a_list, first, split_point-1)
+            self.quick_sort_helper(a_list, split_point+1, last)
 
     def partition(self, a_list, first, last):
         pivot_value = a_list[first]
