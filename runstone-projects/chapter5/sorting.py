@@ -93,7 +93,8 @@ class Sorting:
         return a_list
 
     def quick_sort(self, a_list):
-
+        self.quick_sort_helper(a_list, 0, len(a_list)-1)
+        return a_list
 
     def quick_sort_helper(self, a_list, first, last):
         if first < last:
