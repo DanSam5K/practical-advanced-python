@@ -119,6 +119,10 @@ class Sorting:
         a_list[first], a_list[right_mark] = a_list[right_mark], a_list[first]
         return right_mark
 
+    def quick_sort_2(self, a_list):
+        self.quick_sort_helper_2(a_list, 0, len(a_list)-1)
+        return a_listgit
+
 
 
 
