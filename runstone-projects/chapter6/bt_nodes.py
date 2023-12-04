@@ -33,6 +33,17 @@ class BinaryTree:
         return self.right_child
     
 
+
+def build_tree():
+    a_tree = BinaryTree("a")
+    a_tree.insert_left("b")
+    a_tree.get_left_child().insert_right("d")
+    a_tree.insert_right("c")
+    a_tree.get_right_child().insert_left("e")
+    a_tree.get_right_child().insert_right("f")
+    return a_tree
+    
+
 a_tree = BinaryTree("a")
 print(a_tree.get_root_val())
 print(a_tree.get_left_child())
