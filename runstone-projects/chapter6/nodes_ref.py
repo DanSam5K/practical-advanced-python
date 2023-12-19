@@ -43,4 +43,12 @@ a_tree.insert_right("c")
 print(a_tree.get_right_child().get_root_val())
 a_tree.get_right_child().set_root_val("Hello")
 print(a_tree.get_right_child().get_root_val())
+
+def build_tree():
+    a_tree = BinaryTree("a")
+    a_tree.insert_left("b")
+    a_tree.get_left_child().insert_right("d")
+    a_tree.insert_right("c")
+    a_tree.get_right_child().insert_left("e")
+    a_tree.get_right_child().insert_right("f")
     
