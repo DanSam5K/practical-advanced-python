@@ -51,4 +51,4 @@ def build_tree():
     a_tree.insert_right("c")
     a_tree.get_right_child().insert_left("e")
     a_tree.get_right_child().insert_right("f")
-    
+    return a_tree
